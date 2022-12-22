@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>AxureRP9</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net452</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Client.Win32">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Client.Win32.dll</HintPath>
+    </Reference>
+    <Reference Include="Platform.Win32">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Platform.Win32.dll</HintPath>
+    </Reference>
+    <Reference Include="Win32Wrapper">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Win32Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Platform">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Generators">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Generators.dll</HintPath>
+    </Reference>
+    <Reference Include="Client">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Core">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Component">
+      <HintPath>..\..\..\..\Program Files (x86)\Axure\Axure RP 9\Component.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
