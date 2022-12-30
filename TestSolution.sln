@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClassLibrary", "TestCla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{CA4E52A0-ABCE-43DB-97B1-692914403562}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalApi", "MinimalApi\Source\MinimalApi.csproj", "{18163652-DA85-4F83-A1D4-E1344490E806}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,14 @@ Global
 		{CA4E52A0-ABCE-43DB-97B1-692914403562}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA4E52A0-ABCE-43DB-97B1-692914403562}.Release|x64.ActiveCfg = Release|Any CPU
 		{CA4E52A0-ABCE-43DB-97B1-692914403562}.Release|x64.Build.0 = Release|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Debug|x64.Build.0 = Debug|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Release|x64.ActiveCfg = Release|Any CPU
+		{18163652-DA85-4F83-A1D4-E1344490E806}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,8 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dotnetCHARTING.Net6" Version="10.4.0" />
+    <PackageReference Include="ImageCharts" Version="6.1.238" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.1" />
+    <PackageReference Include="QuickChart" Version="2.3.0" />
+    <PackageReference Include="ScottPlot" Version="4.1.60" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

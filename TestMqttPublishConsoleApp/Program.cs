@@ -11,7 +11,8 @@ class Program
         // Create TCP based options using the builder.
         var client = new MqttFactory().CreateMqttClient();
         var clientOptions = new MqttClientOptionsBuilder()
-            .WithTcpServer("127.0.0.1", 1883)
+            .WithTcpServer("192.168.1.220", 1883)
+            .WithCredentials("djadmin", "dj123456")
             .WithCleanSession(false)
             .WithClientId("d66449e061d6492f24c5c3e80597a3f2")
             .Build();

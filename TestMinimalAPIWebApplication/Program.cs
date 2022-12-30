@@ -8,14 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Net;
 using TestMinimalAPIWebApplication;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        TestChartImage.CreateChartImage();
+        TestQuickChart.CreateImageByQuickChart();
+        TestScottPlot.CrtateImageByScottPlot();
 
+        var builder = WebApplication.CreateBuilder(args);
         //var connectionString = builder.Configuration.GetConnectionString("Pizzas");
 
         builder.Services.AddEndpointsApiExplorer();
@@ -31,6 +35,8 @@ class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.MapGet("/", (TodoDb db) => "test page.");
 
         app.MapGet("/todoitems", async (TodoDb db) =>
             await db.Todos.ToListAsync());
