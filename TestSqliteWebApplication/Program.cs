@@ -1,0 +1,59 @@
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+
+namespace TestSqliteWebApplication
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase")));
+
+            //var cnn = new SqliteConnection("Filename=:memory:");
+            //cnn.Open();
+            //builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(cnn));
+
+            var app = builder.Build();
+            AddCustomerData(app);
+
+            //app.MapGet("/", () => "Hello World!");
+            app.MapGet("/", (HttpContext httpContext, AppDbContext context) => httpContext.Response.WriteAsync($"<b>Hello World</b></br>Customers:{context.Customers.Count()}"));
+
+            app.Run();
+        }
+
+        static void AddCustomerData(WebApplication app)
+        {
+            var scope = app.Services.CreateScope();
+            var db = scope.ServiceProvider.GetService<AppDbContext>();
+
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
+
+            var customer1 = new Customer
+            {
+                CustomerID = "Customer ID 1",
+                CustomerName = "Customer Name 1"
+            };
+
+            var customer2 = new Customer
+            {
+                CustomerID = "Customer ID 2",
+                CustomerName = "Customer Name 2"
+            };
+
+            var customer3 = new Customer
+            {
+                CustomerID = "Customer ID 3",
+                CustomerName = "Customer Name 3"
+            };
+
+            db.Customers.Add(customer1);
+            db.Customers.Add(customer2);
+            db.Customers.Add(customer3);
+
+            db.SaveChanges();
+        }
+    }
+}
