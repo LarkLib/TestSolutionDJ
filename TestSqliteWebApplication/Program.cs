@@ -9,7 +9,7 @@ namespace TestSqliteWebApplication
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase")));
-
+            
             //var cnn = new SqliteConnection("Filename=:memory:");
             //cnn.Open();
             //builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(cnn));
@@ -27,6 +27,8 @@ namespace TestSqliteWebApplication
         {
             var scope = app.Services.CreateScope();
             var db = scope.ServiceProvider.GetService<AppDbContext>();
+
+            if (db == null || db.Customers.Count() > 0) return;
 
             db.Database.EnsureDeleted();
             db.Database.EnsureCreated();

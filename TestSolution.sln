@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSqliteWebApplication", "TestSqliteWebApplication\TestSqliteWebApplication.csproj", "{3B28EC7C-F99E-447B-B4C0-8185F23B41E8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServiceCollectionConsoleApp", "TestServiceCollectionConsoleApp\TestServiceCollectionConsoleApp.csproj", "{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,14 @@ Global
 		{3B28EC7C-F99E-447B-B4C0-8185F23B41E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B28EC7C-F99E-447B-B4C0-8185F23B41E8}.Release|x64.ActiveCfg = Release|Any CPU
 		{3B28EC7C-F99E-447B-B4C0-8185F23B41E8}.Release|x64.Build.0 = Release|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Debug|x64.Build.0 = Debug|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Release|x64.ActiveCfg = Release|Any CPU
+		{AFC5D493-30AB-467A-BAB9-CA36928E9E0D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
