@@ -21,25 +21,44 @@ class Program
 
         client.ApplicationMessageReceivedAsync += e =>
         {
-            Console.WriteLine("Received application message.");
-            Console.WriteLine(e.ApplicationMessage.ConvertPayloadToString());
+            Console.WriteLine($"{DateTime.Now} Received application message.");
+            Console.WriteLine($"Topic:{e.ApplicationMessage.Topic}, Message:{e.ApplicationMessage.ConvertPayloadToString()}");
             return Task.CompletedTask;
         };
+
+        //var mqttSubscribeOptions = new MqttFactory().CreateSubscribeOptionsBuilder()
+        //    .WithTopicFilter(
+        //        f =>
+        //        {
+        //            f.WithTopic("testevent");
+        //        })
+        //    .Build();
+
+        //await client.SubscribeAsync(mqttSubscribeOptions);
+        //await client.SubscribeAsync("testevent", MqttQualityOfServiceLevel.AtLeastOnce);
+
+
+        //var mqttSubscribeOptions = new MqttClientSubscribeOptionsBuilder().WithTopicFilter("a")
+        //            .WithTopicFilter("b", MqttQualityOfServiceLevel.AtLeastOnce)
+        //            .WithTopicFilter("c", MqttQualityOfServiceLevel.ExactlyOnce)
+        //            .WithTopicFilter("d")
+        //            .Build();
 
         var mqttSubscribeOptions = new MqttFactory().CreateSubscribeOptionsBuilder()
             .WithTopicFilter(
                 f =>
                 {
                     f.WithTopic("testevent");
+                    f.WithTopic("testevent1");
+                    f.WithTopic("aaa/+");
                 })
             .Build();
 
-        await client.SubscribeAsync("testevent", MqttQualityOfServiceLevel.AtLeastOnce);
+        await client.SubscribeAsync(mqttSubscribeOptions);
 
         Console.WriteLine("MQTT client subscribed to topic.");
 
         Console.WriteLine("Press enter to exit.");
         Console.ReadLine();
     }
-
 }
