@@ -5,6 +5,7 @@ namespace TestWorkerService
         public static void Main(string[] args)
         {
             IHost host = Host.CreateDefaultBuilder(args)
+                .UseWindowsService()
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<Worker>();
