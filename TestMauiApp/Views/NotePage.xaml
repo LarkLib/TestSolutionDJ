@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestMauiApp.Views.NotePage"
+             xmlns:viewModels="clr-namespace:TestMauiApp.ViewModels"
              Title="NotePage">
+    <ContentPage.BindingContext>
+        <viewModels:NoteViewModel />
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"
@@ -15,15 +19,17 @@
 
         <Grid ColumnDefinitions="*,*,*" ColumnSpacing="4">
             <Button Text="Save"
-                    Clicked="SaveButton_Clicked" />
+                    Command="{Binding SaveCommand}" />
 
             <Button Grid.Column="1"
                     Text="Delete"
-                    Clicked="DeleteButton_Clicked" />
+                    Command="{Binding DeleteCommand}" />
 
             <Button Grid.Column="2"
+                    x:Name="cancelButton"
                     Text="Cancel"
-                    Clicked="SaveButton_Clicked" />
+                    Command="{Binding SaveCommand}"
+                    CommandParameter="{x:Reference cancelButton}" />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
