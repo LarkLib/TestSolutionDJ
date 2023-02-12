@@ -8,16 +8,16 @@
         <viewModels:AboutViewModel />
     </ContentPage.BindingContext>
     <VerticalStackLayout>
+        <Label 
+                Text="Welcome to .NET MAUI!"
+                VerticalOptions="End" 
+                HorizontalOptions="Start" />
         <HorizontalStackLayout Spacing="10">
-            <Label 
-                   Text="Welcome to .NET MAUI!"
-                   VerticalOptions="Fill" 
-                   HorizontalOptions="Fill" />
             <Image Source="dotnet_bot.png"
-                   VerticalOptions="Fill" 
-                   HorizontalOptions="Fill"
+                   VerticalOptions="End" 
+                   HorizontalOptions="Start"
                    SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="164" />
+                   HeightRequest="64" />
             <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
             <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
         </HorizontalStackLayout>

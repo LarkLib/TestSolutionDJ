@@ -1,12 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using TestMauiApp.Models;
 
 namespace TestMauiApp.ViewModels
 {
@@ -15,12 +9,14 @@ namespace TestMauiApp.ViewModels
         public ObservableCollection<ViewModels.NoteViewModel> AllNotes { get; }
         public ICommand NewCommand { get; }
         public ICommand SelectNoteCommand { get; }
+        public ICommand PerformSearch { get; }
 
         public NotesViewModel()
         {
             AllNotes = new ObservableCollection<ViewModels.NoteViewModel>(Models.Note.LoadAll().Select(n => new NoteViewModel(n)));
             NewCommand = new AsyncRelayCommand(NewNoteAsync);
             SelectNoteCommand = new AsyncRelayCommand<ViewModels.NoteViewModel>(SelectNoteAsync);
+            PerformSearch = new AsyncRelayCommand<string>(SeachtNoteAsync);
         }
 
         private async Task NewNoteAsync()
@@ -34,6 +30,10 @@ namespace TestMauiApp.ViewModels
                 await Shell.Current.GoToAsync($"{nameof(Views.NotePage)}?load={note.Identifier}");
         }
 
+        private async Task SeachtNoteAsync(string text)
+        {
+            System.Diagnostics.Debug.WriteLine(text);
+        }
         void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
         {
             if (query.ContainsKey("deleted"))

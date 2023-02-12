@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:TestMauiApp.Views"
     xmlns:home="clr-namespace:TestMauiApp"
     Shell.FlyoutBehavior="Disabled">
+    <!--CurrentItem="{x:Reference Home}">指定当前-->
 
     <!--<ShellContent
         Title="Home"
@@ -13,13 +14,29 @@
         Route="MainPage" />-->
     <TabBar>
         <ShellContent
+            x:Name="Home"
+            Title="Home"
+            ContentTemplate="{DataTemplate home:MainPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+
+        <ShellContent
+            Title="Layout"
+            ContentTemplate="{DataTemplate local:LayoutPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+
+        <ShellContent
+            Title="Refresh"
+            ContentTemplate="{DataTemplate local:RefreshViewPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+        
+        <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate local:AllNotesPage }"
             Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate home:MainPage}"
+            Title="Play"
+            ContentTemplate="{DataTemplate local:PlaySoundPage}"
             Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent

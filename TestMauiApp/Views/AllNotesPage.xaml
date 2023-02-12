@@ -12,6 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
     </ContentPage.ToolbarItems>
+
     <!-- Display notes in a list -->
     <CollectionView x:Name="notesCollection"
                     ItemsSource="{Binding AllNotes}"
@@ -24,7 +25,11 @@
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
         </CollectionView.ItemsLayout>
-
+        <CollectionView.Header>
+            <SearchBar x:Name="searchBar"
+                   SearchCommand="{Binding PerformSearch}"
+                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+        </CollectionView.Header>
         <!-- Define the appearance of each item in the list -->
         <CollectionView.ItemTemplate>
             <DataTemplate>

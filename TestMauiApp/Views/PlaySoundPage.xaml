@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="TestMauiApp.Views.PlaySoundPage"
+             Title="PlaySound">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button Text="一生何求 陈百强" Clicked="PlaySoundAsync" />
+        <toolkit:MediaElement x:Name="mediaElementNoSound"
+                              ShouldAutoPlay="False"
+                              ShouldShowPlaybackControls="True"
+                              Source="embed://1080p.mp4"
+                              HeightRequest="300"
+                              WidthRequest="400" />
+
+        <toolkit:MediaElement x:Name="mediaElementWithSound"
+                              ShouldAutoPlay="False"
+                              ShouldShowPlaybackControls="True"
+                              Source="embed://190204084208765161.mp4"
+                              HeightRequest="300"
+                              WidthRequest="400" />
+    </VerticalStackLayout>
+</ContentPage>
