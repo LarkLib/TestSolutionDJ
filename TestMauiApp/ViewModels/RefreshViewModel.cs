@@ -15,7 +15,6 @@ namespace TestMauiApp.ViewModels
     class RefreshViewModel : INotifyPropertyChanged
     {
         const int RefreshDuration = 2;
-        int itemNumber = 1;
         readonly Random random;
         bool isRefreshing;
 
@@ -42,6 +41,7 @@ namespace TestMauiApp.ViewModels
 
         void AddItems()
         {
+            int itemNumber = 1;
             for (int i = 0; i < 50; i++)
             {
                 Items.Add(new Item
