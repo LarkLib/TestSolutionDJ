@@ -41,7 +41,7 @@ namespace TestMauiApp.ViewModels
 
         private async Task Save(object sender)
         {
-            if (_note == null || sender is not Button || ((Button)sender).Text.Equals("cancel", StringComparison.InvariantCultureIgnoreCase))
+            if (sender is not null && ((Button)sender).Text.Equals("cancel", StringComparison.InvariantCultureIgnoreCase))
             {
                 await Shell.Current.GoToAsync("..");
                 return;
