@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:TestMauiApp.Views"
     xmlns:home="clr-namespace:TestMauiApp"
     Shell.FlyoutBehavior="Disabled">
+    <!--Shell.NavBarIsVisible="False"-->
     <!--CurrentItem="{x:Reference Home}">指定当前-->
 
     <!--<ShellContent
@@ -20,6 +21,11 @@
             Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
+            Title="Barcode"
+            ContentTemplate="{DataTemplate local:BarcodePage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+
+        <ShellContent
             Title="Layout"
             ContentTemplate="{DataTemplate local:LayoutPage}"
             Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
@@ -28,7 +34,7 @@
             Title="Refresh"
             ContentTemplate="{DataTemplate local:RefreshViewPage}"
             Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
-        
+
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate local:AllNotesPage }"

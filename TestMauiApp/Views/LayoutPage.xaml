@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestMauiApp.Views"
              x:Class="TestMauiApp.Views.LayoutPage"
              Title="LayoutPage">
-    <VerticalStackLayout>
-        <Label 
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutSubItem Text="Save">
+                <MenuFlyoutItem Text="Open" />
+                <MenuFlyoutItem Text="Save as" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Close" />
+        </MenuBarItem>
+        <MenuBarItem Text="Edit">
+            <MenuFlyoutItem Text="Edit" IconImageSource="{OnPlatform 'icon_notes.png'}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="Media">
+            <MenuFlyoutItem Text="Play">
+                <MenuFlyoutItem.IconImageSource>
+                    <FontImageSource Glyph="&#x25B6;"
+                                     FontFamily="Arial" />
+                </MenuFlyoutItem.IconImageSource>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem Text="Pause" >
+                <MenuFlyoutItem.IconImageSource>
+                    <FontImageSource Glyph="&#x23F8;"
+                                 FontFamily="Arial" />
+                </MenuFlyoutItem.IconImageSource>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem Text="Stop" >
+                <MenuFlyoutItem.IconImageSource>
+                    <FontImageSource Glyph="&#x23F9;"
+                                 FontFamily="Arial" />
+                </MenuFlyoutItem.IconImageSource>
+            </MenuFlyoutItem>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Button Text="Get Location" Clicked="GetLocationButton_Clicked"/>
+                <Button Text="Display Location in Map" Clicked="SetLocationToMapButton_Clicked"/>
+            </HorizontalStackLayout>
+            <Label x:Name="location" BackgroundColor="#AAB6B6"/>
+            <HorizontalStackLayout>
+                <TimePicker x:Name="timePicker" Time="23:15:26" />
+                <Label Text="{Binding Source={x:Reference timePicker}, Path=Time.TotalSeconds}"/>
+            </HorizontalStackLayout>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Alternatively, click " />
+                        <local:HyperlinkSpan Text="here"
+                                         Url="https://learn.microsoft.com/dotnet/" />
+                        <Span Text=" to view .NET documentation." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
