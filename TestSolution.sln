@@ -33,7 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMqttDescriptionConsoleA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMinimalAPIAuthApplication", "WebMinimalAPIAuthApplication\WebMinimalAPIAuthApplication.csproj", "{E997FA9F-A678-47B2-BAD0-EA4AB052EADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMauiApp", "TestMauiApp\TestMauiApp.csproj", "{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMauiApp", "TestMauiApp\TestMauiApp.csproj", "{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DJSolution", "DJSolution", "{1208E189-1072-4AD5-9521-85656DD4377E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJApplication", "DJSolution\DJApplication\DJApplication.csproj", "{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "DJSolution\Utilities\Utilities.csproj", "{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +177,22 @@ Global
 		{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}.Release|x64.ActiveCfg = Release|Any CPU
 		{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}.Release|x64.Build.0 = Release|Any CPU
 		{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}.Release|x64.Deploy.0 = Release|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Debug|x64.Build.0 = Debug|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Release|x64.ActiveCfg = Release|Any CPU
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}.Release|x64.Build.0 = Release|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Debug|x64.Build.0 = Debug|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Release|x64.ActiveCfg = Release|Any CPU
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +200,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1D82E5D3-EA03-49C7-8E34-CE959E9ECB5D} = {B3903148-679C-416A-A445-077C32495E2C}
 		{E39BD3A0-E5DA-4D28-983B-652DCF8410F0} = {B3903148-679C-416A-A445-077C32495E2C}
+		{BAD1B486-B014-40DD-AFCF-213FE9A2B47D} = {1208E189-1072-4AD5-9521-85656DD4377E}
+		{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB} = {1208E189-1072-4AD5-9521-85656DD4377E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71661EBD-9316-40F3-9F39-37FA8D41B287}

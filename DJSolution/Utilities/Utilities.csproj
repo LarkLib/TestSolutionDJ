@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9DD0DD4-1EF1-4891-9B95-B46FFE149DFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elite.LMS.Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compile\CompilerScript.cs" />
+    <Compile Include="Compile\RemoteLoaderFactory.cs" />
+    <Compile Include="DataAccess\OracleDbHelper.cs" />
+    <Compile Include="DataAccess\OracleHelper.cs" />
+    <Compile Include="DataAccess\SqlDbHelper.cs" />
+    <Compile Include="DataAccess\SqlHelper.cs" />
+    <Compile Include="Encrypt\Base64Util.cs" />
+    <Compile Include="Encrypt\EncodeHelper.cs" />
+    <Compile Include="Encrypt\MD5Util.cs" />
+    <Compile Include="File\AppConfig.cs" />
+    <Compile Include="File\CSVHelper.cs" />
+    <Compile Include="File\DirectoryUtil.cs" />
+    <Compile Include="File\ExcelHelper.cs" />
+    <Compile Include="File\FileDialogHelper.cs" />
+    <Compile Include="File\FileUtil.cs" />
+    <Compile Include="File\IniFileUtil.cs" />
+    <Compile Include="Format\ByteImageConvertor.cs" />
+    <Compile Include="Format\ConvertHelper.cs" />
+    <Compile Include="Format\DateTimeHelper.cs" />
+    <Compile Include="Format\EnumHelper.cs" />
+    <Compile Include="Format\RMBUtil.cs" />
+    <Compile Include="Format\StringUtil.cs" />
+    <Compile Include="Format\ValidateUtil.cs" />
+    <Compile Include="Format\XmlConvertor.cs" />
+    <Compile Include="Format\XmlHelper.cs" />
+    <Compile Include="Form\CallCtrlWithThreadSafety.cs" />
+    <Compile Include="Form\DataReceivedEventArgs.cs" />
+    <Compile Include="Form\FullscreenHelper.cs" />
+    <Compile Include="Form\MessageUtil.cs" />
+    <Compile Include="Form\NotifyIconHelper.cs" />
+    <Compile Include="Form\PrintDataGridView.cs" />
+    <Compile Include="Form\PrintSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PrintSettings.designer.cs">
+      <DependentUpon>PrintSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SerialPortUtil.cs" />
+    <Compile Include="Form\StartupHelper.cs" />
+    <Compile Include="Form\WaitWindow.cs" />
+    <Compile Include="Form\WaitWindowEventArgs.cs" />
+    <Compile Include="Form\WaitWindowGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\WaitWindowGUI.designer.cs">
+      <DependentUpon>WaitWindowGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\WindowsExitHelper.cs" />
+    <Compile Include="Form\WinServiceHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\PrintSettings.resx">
+      <DependentUpon>PrintSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\WaitWindowGUI.resx">
+      <DependentUpon>WaitWindowGUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

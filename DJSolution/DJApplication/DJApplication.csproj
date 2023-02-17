@@ -1,0 +1,1786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DJ.LMS.WinForms</RootNamespace>
+    <AssemblyName>毁伤效能评估</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.0.140:8090/</InstallUrl>
+    <TargetCulture>zh-Hans</TargetCulture>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>102</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>home.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>58A7FECCC3578EC47C3BBF3B2523F1AAF18B52EB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EliteWMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Export, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.TreeMap.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.UI, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.Wizard, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Extensions, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeMap.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v22.1.UI, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceProxy">
+      <HintPath>..\EliteServiceProxy\bin\Debug\ServiceProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\..\..\公主岭富锋汽车项目\EliteWMS\EliteWMS\bin\Debug\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BllFactory.cs" />
+    <Compile Include="Backup\CommonForms\FrmCellBarcodeSizeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellBarcodeSizeSelect.Designer.cs">
+      <DependentUpon>FrmCellBarcodeSizeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmStoreCellSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmStoreCellSelect.Designer.cs">
+      <DependentUpon>FrmStoreCellSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DianJin\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DianJin\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DianJin\FrmP300Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DianJin\FrmP300Main.Designer.cs">
+      <DependentUpon>FrmP300Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DianJin\TestForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DianJin\TestForm2.Designer.cs">
+      <DependentUpon>TestForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DianJin\TestFormGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DianJin\TestFormGrid.Designer.cs">
+      <DependentUpon>TestFormGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DianJin\TestFormTreeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DianJin\TestFormTreeList.Designer.cs">
+      <DependentUpon>TestFormTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmInspectionItemSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmInspectionItemSelect.Designer.cs">
+      <DependentUpon>FrmInspectionItemSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmMaterialInitInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmMaterialInitInspection.Designer.cs">
+      <DependentUpon>FrmMaterialInitInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmProductInitInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Inspection\FrmProductInitInspection.Designer.cs">
+      <DependentUpon>FrmProductInitInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaterialManualReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaterialManualReturn.Designer.cs">
+      <DependentUpon>FrmMaterialManualReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmProductBarcodeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmProductBarcodeQuery.Designer.cs">
+      <DependentUpon>FrmProductBarcodeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmAlihealthRelationImportQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmAlihealthRelationImportQuery.Designer.cs">
+      <DependentUpon>FrmAlihealthRelationImportQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmMaterialStorageCollate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmMaterialStorageCollate.Designer.cs">
+      <DependentUpon>FrmMaterialStorageCollate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmProductStorageCollate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmProductStorageCollate.Designer.cs">
+      <DependentUpon>FrmProductStorageCollate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmImportProductBarcodeDetailSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmImportProductBarcodeDetailSelector.Designer.cs">
+      <DependentUpon>FrmImportProductBarcodeDetailSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmImportProductBarcodeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmImportProductBarcodeDetail.Designer.cs">
+      <DependentUpon>FrmImportProductBarcodeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInitialInspectionItemMaterialRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInitialInspectionItemMaterialRelation.Designer.cs">
+      <DependentUpon>FrmInitialInspectionItemMaterialRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmImportProductBarcodeDetail.ProductBarcodeDocument.cs" />
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanInventoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanInventoryReport.Designer.cs">
+      <DependentUpon>FrmStorageCheckPlanInventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanQuery.Designer.cs">
+      <DependentUpon>FrmStorageCheckPlanQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaterialAutoChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaterialAutoChangeStatus.designer.cs">
+      <DependentUpon>FrmMaterialAutoChangeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmStorageCheckPlanSelector.Designer.cs">
+      <DependentUpon>FrmStorageCheckPlanSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInspectQuantityMaterialRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInspectQuantityMaterialRelation.designer.cs">
+      <DependentUpon>FrmInspectQuantityMaterialRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportBarcodePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportBarcodePrint.designer.cs">
+      <DependentUpon>FrmImportBarcodePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsDepartmentMaterialRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsDepartmentMaterialRelation.designer.cs">
+      <DependentUpon>FrmLimsDepartmentMaterialRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmUserMaterialRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmUserMaterialRelation.designer.cs">
+      <DependentUpon>FrmUserMaterialRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmPlanListStatusUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmPlanListStatusUpdate.designer.cs">
+      <DependentUpon>FrmPlanListStatusUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmMaterialBarcodePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmMaterialBarcodePrint.designer.cs">
+      <DependentUpon>FrmMaterialBarcodePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmEncryptConnectionString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmEncryptConnectionString.Designer.cs">
+      <DependentUpon>FrmEncryptConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmAboutBox.designer.cs">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellBarcodePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellBarcodePrint.designer.cs">
+      <DependentUpon>FrmCellBarcodePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellDefine.designer.cs">
+      <DependentUpon>FrmCellDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmCellMain.designer.cs">
+      <DependentUpon>FrmCellMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmEventLogQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmEventLogQuery.Designer.cs">
+      <DependentUpon>FrmEventLogQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmItemMainEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmItemMainEdit.Designer.cs">
+      <DependentUpon>FrmItemMainEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmItemQueryMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmItemQueryMain.designer.cs">
+      <DependentUpon>FrmItemQueryMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmModifyCellState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmModifyCellState.designer.cs">
+      <DependentUpon>FrmModifyCellState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmModifyPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmModifyPassword.designer.cs">
+      <DependentUpon>FrmModifyPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\WaitForm1.designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucChooseOutbound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucChooseOutbound.designer.cs">
+      <DependentUpon>ucChooseOutbound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWMSBaseDataMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWMSBaseDataMain.Designer.cs">
+      <DependentUpon>FrmWMSBaseDataMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucCell.designer.cs">
+      <DependentUpon>ucCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucPager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucPager.designer.cs">
+      <DependentUpon>ucPager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmUserEdit.Designer.cs">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmUserMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmUserMain.Designer.cs">
+      <DependentUpon>FrmUserMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmRoleEdit.Designer.cs">
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmRoleMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmRoleMain.Designer.cs">
+      <DependentUpon>FrmRoleMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmItemMasterMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmItemMasterMain.Designer.cs">
+      <DependentUpon>FrmItemMasterMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmProductCellSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmProductCellSelect.Designer.cs">
+      <DependentUpon>FrmProductCellSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmProductOutboundFromScatter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmProductOutboundFromScatter.Designer.cs">
+      <DependentUpon>FrmProductOutboundFromScatter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\FrmSystemInfoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\FrmSystemInfoMain.Designer.cs">
+      <DependentUpon>FrmSystemInfoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWarehouseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWarehouseEdit.Designer.cs">
+      <DependentUpon>FrmWarehouseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWarehouseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmWarehouseMain.Designer.cs">
+      <DependentUpon>FrmWarehouseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucProductCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\DefineUserControls\ucProductCell.Designer.cs">
+      <DependentUpon>ucProductCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmBizChooseOutbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmBizChooseOutbound.designer.cs">
+      <DependentUpon>FrmBizChooseOutbound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmChooseSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmChooseSettings.designer.cs">
+      <DependentUpon>FrmChooseSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaintainPlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaintainPlanEdit.Designer.cs">
+      <DependentUpon>FrmMaintainPlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReportQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReportQuery.Designer.cs">
+      <DependentUpon>FrmLimsReportQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaintainPlanQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmMaintainPlanQuery.Designer.cs">
+      <DependentUpon>FrmMaintainPlanQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInitialInspectionRecordQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmInitialInspectionRecordQuery.Designer.cs">
+      <DependentUpon>FrmInitialInspectionRecordQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReport.Designer.cs">
+      <DependentUpon>FrmLimsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmPlanMainQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmPlanMainQuery.Designer.cs">
+      <DependentUpon>FrmPlanMainQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReportReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\FrmLimsReportReason.Designer.cs">
+      <DependentUpon>FrmLimsReportReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportStorage.Designer.cs">
+      <DependentUpon>FrmImportStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportUpdateStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmImportUpdateStatus.Designer.cs">
+      <DependentUpon>FrmImportUpdateStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmCellMainMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmCellMainMaintenance.Designer.cs">
+      <DependentUpon>FrmCellMainMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStorageSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStorageSummary.Designer.cs">
+      <DependentUpon>FrmStorageSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStorageQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStorageQuery.Designer.cs">
+      <DependentUpon>FrmStorageQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmPalletCodeInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmPalletCodeInput.Designer.cs">
+      <DependentUpon>FrmPalletCodeInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmPalletMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CommonForms\FrmPalletMain.Designer.cs">
+      <DependentUpon>FrmPalletMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Record\FrmRecordQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Record\FrmRecordQuery.designer.cs">
+      <DependentUpon>FrmRecordQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStoreCellQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\Storage\FrmStoreCellQuery.Designer.cs">
+      <DependentUpon>FrmStoreCellQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemDataSchemaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemDataSchemaEdit.Designer.cs">
+      <DependentUpon>FrmDamageTreeItemDataSchemaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemEdit.Designer.cs">
+      <DependentUpon>FrmDamageTreeItemEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeEdit.Designer.cs">
+      <DependentUpon>FrmDamageTreeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeItemMain.Designer.cs">
+      <DependentUpon>FrmDamageTreeItemMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\FrmDamageTreeMain.Designer.cs">
+      <DependentUpon>FrmDamageTreeMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityClass\CommonFunc.DamageTree.cs" />
+    <Compile Include="UtilityClass\CommonFunc.jzt.cs" />
+    <Compile Include="UtilityClass\PlanAuditException.cs" />
+    <Compile Include="CommonForms\WaitForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\WaitForm2.Designer.cs">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\PrintPreviewDialogWithPrinterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UtilityClass\CommonFunc.cs" />
+    <Compile Include="UtilityClass\CustomeValidationRule.cs" />
+    <Compile Include="UtilityClass\Enum.cs" />
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="UtilityClass\GridControlUtil.cs" />
+    <Compile Include="UtilityClass\LoginUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityClass\TreeNodeStyle.cs" />
+    <Compile Include="UtilityClass\ValidateUtil.cs" />
+    <Compile Include="UtilityClass\Warehouse.cs" />
+    <Compile Include="UtilityClass\Win32Api.cs" />
+    <Compile Include="Backup\Manage\XtraReportLims.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Backup\Manage\XtraReportLims.Designer.cs">
+      <DependentUpon>XtraReportLims.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Backup\CommonForms\FrmCellBarcodeSizeSelect.resx">
+      <DependentUpon>FrmCellBarcodeSizeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmStoreCellSelect.resx">
+      <DependentUpon>FrmStoreCellSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DianJin\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DianJin\FrmP300Main.resx">
+      <DependentUpon>FrmP300Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DianJin\TestForm2.resx">
+      <DependentUpon>TestForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DianJin\TestFormGrid.resx">
+      <DependentUpon>TestFormGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DianJin\TestFormTreeList.resx">
+      <DependentUpon>TestFormTreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Inspection\FrmInspectionItemSelect.resx">
+      <DependentUpon>FrmInspectionItemSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Inspection\FrmMaterialInitInspection.resx">
+      <DependentUpon>FrmMaterialInitInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Inspection\FrmProductInitInspection.resx">
+      <DependentUpon>FrmProductInitInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmMaterialManualReturn.resx">
+      <DependentUpon>FrmMaterialManualReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmProductBarcodeQuery.resx">
+      <DependentUpon>FrmProductBarcodeQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmAlihealthRelationImportQuery.resx">
+      <DependentUpon>FrmAlihealthRelationImportQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmMaterialStorageCollate.resx">
+      <DependentUpon>FrmMaterialStorageCollate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmProductStorageCollate.resx">
+      <DependentUpon>FrmProductStorageCollate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmImportProductBarcodeDetailSelector.resx">
+      <DependentUpon>FrmImportProductBarcodeDetailSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmImportProductBarcodeDetail.resx">
+      <DependentUpon>FrmImportProductBarcodeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmInitialInspectionItemMaterialRelation.resx">
+      <DependentUpon>FrmInitialInspectionItemMaterialRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmStorageCheckPlanInventoryReport.resx">
+      <DependentUpon>FrmStorageCheckPlanInventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmStorageCheckPlanQuery.resx">
+      <DependentUpon>FrmStorageCheckPlanQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmMaterialAutoChangeStatus.resx">
+      <DependentUpon>FrmMaterialAutoChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmStorageCheckPlanSelector.resx">
+      <DependentUpon>FrmStorageCheckPlanSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmInspectQuantityMaterialRelation.resx">
+      <DependentUpon>FrmInspectQuantityMaterialRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmImportBarcodePrint.resx">
+      <DependentUpon>FrmImportBarcodePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmLimsDepartmentMaterialRelation.resx">
+      <DependentUpon>FrmLimsDepartmentMaterialRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmUserMaterialRelation.resx">
+      <DependentUpon>FrmUserMaterialRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmPlanListStatusUpdate.resx">
+      <DependentUpon>FrmPlanListStatusUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmMaterialBarcodePrint.resx">
+      <DependentUpon>FrmMaterialBarcodePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmEncryptConnectionString.resx">
+      <DependentUpon>FrmEncryptConnectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmAboutBox.resx">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmCellBarcodePrint.resx">
+      <DependentUpon>FrmCellBarcodePrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmCellDefine.resx">
+      <DependentUpon>FrmCellDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmCellMain.resx">
+      <DependentUpon>FrmCellMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmEventLogQuery.resx">
+      <DependentUpon>FrmEventLogQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmItemMainEdit.resx">
+      <DependentUpon>FrmItemMainEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmItemQueryMain.resx">
+      <DependentUpon>FrmItemQueryMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmModifyCellState.resx">
+      <DependentUpon>FrmModifyCellState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmModifyPassword.resx">
+      <DependentUpon>FrmModifyPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\PrintPreviewDialogWithPrinterSelect.resx">
+      <DependentUpon>PrintPreviewDialogWithPrinterSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\DefineUserControls\ucChooseOutbound.resx">
+      <DependentUpon>ucChooseOutbound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmWMSBaseDataMain.resx">
+      <DependentUpon>FrmWMSBaseDataMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\DefineUserControls\ucCell.resx">
+      <DependentUpon>ucCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\DefineUserControls\ucPager.resx">
+      <DependentUpon>ucPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\WaitForm2.resx">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmUserEdit.resx">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmUserMain.resx">
+      <DependentUpon>FrmUserMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmRoleEdit.resx">
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmRoleMain.resx">
+      <DependentUpon>FrmRoleMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmItemMasterMain.resx">
+      <DependentUpon>FrmItemMasterMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmProductCellSelect.resx">
+      <DependentUpon>FrmProductCellSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmProductOutboundFromScatter.resx">
+      <DependentUpon>FrmProductOutboundFromScatter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\FrmSystemInfoMain.resx">
+      <DependentUpon>FrmSystemInfoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmWarehouseEdit.resx">
+      <DependentUpon>FrmWarehouseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmWarehouseMain.resx">
+      <DependentUpon>FrmWarehouseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\DefineUserControls\ucProductCell.resx">
+      <DependentUpon>ucProductCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmBizChooseOutbound.resx">
+      <DependentUpon>FrmBizChooseOutbound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmChooseSettings.resx">
+      <DependentUpon>FrmChooseSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmMaintainPlanEdit.resx">
+      <DependentUpon>FrmMaintainPlanEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmLimsReportQuery.resx">
+      <DependentUpon>FrmLimsReportQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmMaintainPlanQuery.resx">
+      <DependentUpon>FrmMaintainPlanQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmInitialInspectionRecordQuery.resx">
+      <DependentUpon>FrmInitialInspectionRecordQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmLimsReport.resx">
+      <DependentUpon>FrmLimsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\FrmPlanMainQuery.resx">
+      <DependentUpon>FrmPlanMainQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Manage\XtraReportLims.resx">
+      <DependentUpon>XtraReportLims.cs</DependentUpon>
+    </EmbeddedResource>
+    <Fakes Include="Fakes\ThoughtWorks.QRCode.fakes" />
+    <None Include="MenuData.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <EmbeddedResource Include="Backup\Manage\FrmLimsReportReason.resx">
+      <DependentUpon>FrmLimsReportReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmImportStorage.resx">
+      <DependentUpon>FrmImportStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmImportUpdateStatus.resx">
+      <DependentUpon>FrmImportUpdateStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmCellMainMaintenance.resx">
+      <DependentUpon>FrmCellMainMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmStorageSummary.resx">
+      <DependentUpon>FrmStorageSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmStorageQuery.resx">
+      <DependentUpon>FrmStorageQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmPalletCodeInput.resx">
+      <DependentUpon>FrmPalletCodeInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CommonForms\FrmPalletMain.resx">
+      <DependentUpon>FrmPalletMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Record\FrmRecordQuery.resx">
+      <DependentUpon>FrmRecordQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\Storage\FrmStoreCellQuery.resx">
+      <DependentUpon>FrmStoreCellQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\FrmDamageTreeItemDataSchemaEdit.resx">
+      <DependentUpon>FrmDamageTreeItemDataSchemaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\FrmDamageTreeItemEdit.resx">
+      <DependentUpon>FrmDamageTreeItemEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\FrmDamageTreeEdit.resx">
+      <DependentUpon>FrmDamageTreeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\FrmDamageTreeItemMain.resx">
+      <DependentUpon>FrmDamageTreeItemMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\FrmDamageTreeMain.resx">
+      <DependentUpon>FrmDamageTreeMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="fieldConfig.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\licenses.licx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fieldConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="home.ico" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\group_key1.png" />
+    <Content Include="zh-Hans\DevExpress.Charts.Designer.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Dashboard.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Dashboard.v19.1.Web.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Dashboard.v19.1.Win.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Data.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.DataAccess.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.DataAccess.v19.1.UI.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Diagram.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Dialogs.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.AuditTrail.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Dashboards.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Dashboards.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Dashboards.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.FileAttachment.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.FileAttachment.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Kpi.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Mobile.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Notifications.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Notifications.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Objects.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Office.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.PivotChart.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Reports.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Reports.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Reports.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.ReportsV2.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.ReportsV2.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.ReportsV2.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Scheduler.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Scheduler.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Scheduler.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Security.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Security.Xpo.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.StateMachine.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Validation.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.ViewVariantsModule.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Workflow.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ExpressApp.Workflow.Win.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Map.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Mvvm.v19.1.DataModel.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Office.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Pdf.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Persistent.Base.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.PivotGrid.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Printing.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.ReportServer.v19.1.Localization.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.RichEdit.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Snap.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Snap.v19.1.Extensions.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Snap.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Sparkline.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Spreadsheet.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Utils.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Utils.v19.1.UI.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxHtmlEditor.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxRichEdit.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxScheduler.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxSpellChecker.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxSpreadsheet.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.ASPxTreeList.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.Resources.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Web.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Charts.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Controls.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Core.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Docking.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.DocumentViewer.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Gauges.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Grid.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.LayoutControl.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.NavBar.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.PdfViewer.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Printing.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.PropertyGrid.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.ReportDesigner.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Ribbon.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.RichEdit.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Scheduler.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Scheduling.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.SpellChecker.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpf.Spreadsheet.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.Xpo.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraBars.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraCharts.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraCharts.v19.1.Wizard.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraEditors.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraGauges.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraGauges.v19.1.Presets.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraGrid.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraLayout.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraNavBar.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraPdfViewer.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraPivotGrid.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraPrinting.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraReports.v19.1.Extensions.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraReports.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraReports.v19.1.Web.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraRichEdit.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraScheduler.v19.1.Core.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraScheduler.v19.1.Extensions.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraScheduler.v19.1.Reporting.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraScheduler.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraSpellChecker.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraSpreadsheet.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraTreeList.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraVerticalGrid.v19.1.resources.dll" />
+    <Content Include="zh-Hans\DevExpress.XtraWizard.v19.1.resources.dll" />
+    <None Include="Resources\barcode-2d.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search16.bmp" />
+    <None Include="Resources\find.png" />
+    <Content Include="Tools\计算器.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\记事本.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\calculator_black.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\group_key.png" />
+    <None Include="Resources\bingshan_logo.png" />
+    <None Include="Resources\BackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EliteSyncServiceData\EliteSyncServiceData.csproj">
+      <Project>{80A17723-55AD-44E1-BC4C-2C323615E548}</Project>
+      <Name>EliteSyncServiceData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{a9dd0dd4-1ef1-4891-9b95-b46ffe149dfb}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="de\DevExpress.Data.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.Office.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.Pdf.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.Printing.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.RichEdit.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.Sparkline.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.Utils.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraBars.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraEditors.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraLayout.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraNavBar.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraPrinting.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraTreeList.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="de\DevExpress.XtraVerticalGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Data.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Office.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Pdf.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Printing.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.RichEdit.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Sparkline.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Utils.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraBars.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraEditors.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraLayout.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraNavBar.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraPrinting.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraTreeList.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraVerticalGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="fieldConfig.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Data.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Office.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Pdf.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Printing.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.RichEdit.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Sparkline.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.Utils.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraBars.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraEditors.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraLayout.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraNavBar.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraPrinting.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraTreeList.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\DevExpress.XtraVerticalGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Data.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Office.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Pdf.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Printing.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.RichEdit.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Sparkline.v22.1.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.Utils.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraBars.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraEditors.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraLayout.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraNavBar.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraPrinting.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraTreeList.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\DevExpress.XtraVerticalGrid.v22.1.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.6\build\Microsoft.CodeQuality.Analyzers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="app_config_AfterCompile" AfterTargets="AfterCompile" Condition="Exists('app.$(Configuration).config')">
+    <!--Generate transformed app config in the intermediate directory-->
+    <TransformXml Source="app.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="app.$(Configuration).config" />
+    <!--Force build process to use the transformed configuration file from now on.-->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="@(AppConfigWithTargetPath)" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <!--Override After Publish to support ClickOnce AfterPublish. Target replaces the untransformed config file copied to the deployment directory with the transformed one.-->
+  <Target Name="app_config_AfterPublish" AfterTargets="AfterPublish" Condition="Exists('app.$(Configuration).config')">
+    <PropertyGroup>
+      <DeployedConfig>$(_DeploymentApplicationDir)$(TargetName)$(TargetExt).config$(_DeploymentFileMappingExtension)</DeployedConfig>
+    </PropertyGroup>
+    <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
+    <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+</Project>

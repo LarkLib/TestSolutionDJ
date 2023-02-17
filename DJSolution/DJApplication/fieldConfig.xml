@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="fieldConfig.xsd">
+	<Table name="UserMain">
+		<Field fieldName="ID"             caption=""         editable="False" index="1"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="LoginName"      caption="登录名称" editable="False" index="2"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="RealName"       caption="真实姓名" editable="False" index="3"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="LoginPwd"       caption=""         editable="False" index="4"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="RelationRole"   caption="用户角色" editable="False" index="5"   control="LookUpEdit" comboSql="select ID as VALUE,Name as NAME FROM RoleMain" width="75"/>
+		<Field fieldName="IsEffective"    caption="有效性"   editable="False" index="6"   control="CheckEdit"  comboSql="" width="75"/>
+		<Field fieldName="CreateTime"     caption="创建日期" editable="False" index="7"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="UpdateTime"     caption="更新日期" editable="False" index="8"   control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Remark"         caption="备注信息" editable="False" index="9"   control="TextBox"    comboSql="" width="75"/>
+	</Table>
+
+	<Table name="RoleMain">
+		<Field fieldName="ID"             caption="角色索引" editable="False" index="1" control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Name"           caption="角色名称" editable="False" index="2" control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="IsEffective"    caption="有效性"   editable="False" index="3" control="CheckEdit"  comboSql="" width="75"/>
+		<Field fieldName="Remark"         caption="备注信息" editable="False" index="4" control="TextBox"    comboSql="" width="75"/>
+	</Table>
+
+	<Table name="v_DamageTreeMain">
+		<Field fieldName="ID"               caption="序号"         editable="False" index="1"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Name"             caption="名称"         editable="False" index="2"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Code"             caption="编码"         editable="False" index="3"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="TypeName"         caption="类别"         editable="False" index="5"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="StatusName"       caption="状态"         editable="False" index="5"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Remark"           caption="描述"         editable="False" index="5"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="IsEffective"      caption="有效性"       editable="False" index="6" control="CheckEdit"  comboSql="" width="75"/>
+		<Field fieldName="Status"           caption=""            editable="False" index="6"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Type"             caption=""            editable="False" index="6"  control="TextBox"    comboSql="" width="75"/>
+	</Table>
+
+	<Table name="ItemList">
+		<Field fieldName="ItemListID"             caption=""              editable="False" index="1"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="ItemID"                 caption=""              editable="False" index="2"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="ItemListOrder"          caption="序号"          editable="False" index="2"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="ItemListCode"           caption="编号"          editable="True" index="3"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="ItemListName"           caption="名称"          editable="True" index="4"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="IsEffective"            caption="可用性"        editable="True" index="6"  control="TextBox"    comboSql="" width="75"/>
+		<Field fieldName="Remark"                 caption="备注信息"      editable="True" index="6"  control="TextBox"    comboSql="" width="75"/>
+	</Table>
+
+	<Table name="EventLog">
+		<Field fieldName="ID"              editable="False"     index="1"   control="TextBox" comboSql="" width="75"  caption=""             />
+		<Field fieldName="SystemID"        editable="False"     index="2"   control="TextBox" comboSql="" width="75"  caption="来源"         />
+		<Field fieldName="EventType"       editable="False"     index="3"   control="TextBox" comboSql="" width="75"  caption="类型"         />
+		<Field fieldName="Title"           editable="False"     index="4"   control="TextBox" comboSql="" width="75"  caption=""             />
+		<Field fieldName="Message"         editable="False"     index="5"   control="TextBox" comboSql="" width="300" caption="信息"         />
+		<Field fieldName="CreateTime"      editable="False"     index="6"   control="TextBox" comboSql="" width="90"  caption="创建时间"     />
+		<Field fieldName="Status"          editable="False"     index="6"   control="TextBox" comboSql="" width="90"  caption="状态"     />
+		<Field fieldName="ExpireDate"      editable="False"     index="7"   control="TextBox" comboSql="" width="75"  caption=""             />
+		<Field fieldName="AccessLevel"     editable="False"     index="8"   control="TextBox" comboSql="" width="75"  caption=""             />
+	</Table>
+
+	<Table name="v_DamageTreeItemDataSchema">
+		<!--<Field fieldName="Check"            editable="True"          index="10"          control="CheckEdit"   comboSql=""    width="45"    caption="选择" />-->
+		<Field  fieldName="ID"              editable="False"         index="11"          control="TextBox"     comboSql=""    width="75"    caption="序号" />
+		<Field  fieldName="Name"            editable="False"         index="12"          control="TextBox"     comboSql=""    width="75"    caption="名称" />
+		<Field  fieldName="Title"           editable="False"         index="13"          control="TextBox"     comboSql=""    width="75"    caption="标题" />
+		<Field  fieldName="Size"            editable="False"         index="14"          control="TextBox"     comboSql=""    width="75"    caption="尺寸" />
+		<Field  fieldName="Location"        editable="False"         index="15"          control="TextBox"     comboSql=""    width="75"    caption="位置" />
+		<Field  fieldName="Type"            editable="False"         index="16"          control="TextBox"     comboSql=""    width="75"    caption="" />
+		<Field  fieldName="TypeName"        editable="False"         index="18"          control="TextBox"     comboSql=""    width="75"    caption="类型" />
+		<Field  fieldName="Config"          editable="False"         index="19"          control="TextBox"     comboSql=""    width="75"    caption="配置" />
+		<Field  fieldName="DataType"        editable="False"         index="20"          control="TextBox"     comboSql=""    width="75"    caption="" />
+		<Field  fieldName="DataTypeName"    editable="False"         index="20"          control="TextBox"     comboSql=""    width="75"    caption="数据类型" />
+		<Field  fieldName="DefaultValue"    editable="False"         index="21"          control="TextBox"     comboSql=""    width="75"    caption="默认值" />
+		<Field  fieldName="IsEffective"     editable="False"         index="22"          control="CheckEdit"   comboSql=""    width="75"    caption="有效性" />
+	</Table>
+</configuration>
