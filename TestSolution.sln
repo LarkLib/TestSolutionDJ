@@ -36,6 +36,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMauiApp", "TestMauiApp\TestMauiApp.csproj", "{C1D5A7CE-3D61-4DFD-A3E8-CDD2B1BC2AAF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DJSolution", "DJSolution", "{1208E189-1072-4AD5-9521-85656DD4377E}"
+	ProjectSection(SolutionItems) = preProject
+		..\DataBase\DJEvaluate.bak = ..\DataBase\DJEvaluate.bak
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJApplication", "DJSolution\DJApplication\DJApplication.csproj", "{BAD1B486-B014-40DD-AFCF-213FE9A2B47D}"
 EndProject
