@@ -54,6 +54,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vueapp_dragtable", "vueapp_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSqlSugarConsoleApp", "TestSqlSugarConsoleApp\TestSqlSugarConsoleApp.csproj", "{1CDBD90C-34E6-4A61-AE1B-0EFA844ED753}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerilogConsoleApp", "TestSerilogConsoleApp\TestSerilogConsoleApp.csproj", "{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -250,6 +252,14 @@ Global
 		{1CDBD90C-34E6-4A61-AE1B-0EFA844ED753}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1CDBD90C-34E6-4A61-AE1B-0EFA844ED753}.Release|x64.ActiveCfg = Release|Any CPU
 		{1CDBD90C-34E6-4A61-AE1B-0EFA844ED753}.Release|x64.Build.0 = Release|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Debug|x64.Build.0 = Debug|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Release|x64.ActiveCfg = Release|Any CPU
+		{AAE45B26-F669-452F-B1C4-19BDEFADCEE2}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

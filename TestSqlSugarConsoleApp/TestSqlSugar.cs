@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using SqlSugar;
 using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestSqlSugarConsoleApp;
 class TestSqlSugar
@@ -10,8 +11,10 @@ class TestSqlSugar
 
     public static void Execute()
     {
-        ExecuteSqlServer();
+        //ExecuteSqlServer();
         //ExecuteSqlite();
+        //ExecuteIoc();
+        ExecutePostgres();
     }
     private static void ExecuteSqlite()
     {
@@ -161,5 +164,55 @@ class TestSqlSugar
         var list3 = Db.Queryable<dynamic>().AS("v_Base_inventoryList").Where("F_StoreCell=@id", new { id = 10001 }).ToList();//没实体一样用
 
         var name = new SugarParameter("@name", "haha", System.Data.DbType.AnsiString);
+    }
+
+    private static void ExecuteIoc()
+    {
+        SqlSugar.IOC.SugarIocServices.AddSqlSugar(new SqlSugar.IOC.IocConfig()
+        {
+            ConnectionString = Configuration.GetConfig().GetConnectionString("conn_db"),
+            DbType = SqlSugar.IOC.IocDbType.SqlServer,
+            IsAutoCloseConnection = true//自动释放
+        });
+        //注入后就能所有地方使用
+        var list5 = SqlSugar.IOC.DbScoped.SugarScope.Queryable<dynamic>().AS("v_Base_inventoryList").Where("F_StoreCell=@id", new { id = 10001 }).ToList();
+    }
+
+    private static void ExecutePostgres()
+    {
+        SqlSugarClient Db = new SqlSugarClient(new ConnectionConfig()
+        {
+            ConnectionString = Configuration.GetConfig().GetConnectionString("conn_db_postgres"),
+            DbType = (DbType)Convert.ToInt32(Configuration.GetConfig().GetConnectionString("conn_db_type_postgres")),
+            IsAutoCloseConnection = true
+        },
+        db =>
+        {
+            //5.1.3.24统一了语法和SqlSugarScope一样，老版本AOP可以写外面
+
+            db.Aop.OnLogExecuting = (sql, pars) =>
+            {
+                //Console.WriteLine(sql);//输出sql,查看执行sql 性能无影响
+
+
+                //获取原生SQL推荐 5.1.4.63  性能OK
+                //UtilMethods.GetNativeSql(sql,pars)
+
+                //获取无参数化SQL 对性能有影响，特别大的SQL参数多的，调试使用
+                //UtilMethods.GetSqlString(DbType.SqlServer,sql,pars)
+
+
+            };
+
+            //注意多租户 有几个设置几个
+            //db.GetConnection(i).Aop
+
+        });
+        Db.DbMaintenance.GetDataBaseList().ForEach(data => Console.WriteLine(data));
+        Db.CodeFirst.InitTables(typeof(Person));//根据types创建表
+        Db.Insertable(Person.CreatePerson()).ExecuteCommand();
+        var persons = Db.Queryable<Person>().Where((p) => !string.IsNullOrEmpty(p.Title) && p.Title.StartsWith("Mr"));//case sensitive
+        persons.ForEach(person => Console.WriteLine(person.Id));
+        Console.WriteLine(persons.ToJson());
     }
 }
