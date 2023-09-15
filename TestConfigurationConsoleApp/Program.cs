@@ -19,8 +19,11 @@ namespace TestConfigurationConsoleApp
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
 
-            var mySettings = Configuration.GetSection("gen").Get<GenEntity>();//Entity类名与配置文件里的字段名匹配，不区分大小写
             var conn = Configuration.GetConnectionString("conn_db");
+            var color = Configuration["gen:items:color"];
+            Configuration["gen:items:color"] = "blue";//不支持修改
+
+            var mySettings = Configuration.GetSection("gen").Get<GenEntity>();//Entity类名与配置文件里的字段名匹配，不区分大小写
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
             //https://www.cnblogs.com/harrychinese/p/winform_DependencyInjection.html

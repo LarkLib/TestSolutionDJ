@@ -1,3 +1,4 @@
+using Mapster;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using SqlSugar;
@@ -11,10 +12,10 @@ class TestSqlSugar
 
     public static void Execute()
     {
-        //ExecuteSqlServer();
+        ExecuteSqlServer();
         //ExecuteSqlite();
         //ExecuteIoc();
-        ExecutePostgres();
+        //ExecutePostgres();
     }
     private static void ExecuteSqlite()
     {
@@ -47,7 +48,10 @@ class TestSqlSugar
 
         var person = Person.CreatePerson();
         Db.Insertable<Person>(person).ExecuteCommand();
-        var personList = Db.Queryable<Person>();
+        var personList = Db.Queryable<Person>().Where(p => p.Title.Equals("Mr. 7362"));//hit
+        personList = Db.Queryable<Person>().Where(p => p.Title.Equals("mr. 7362", StringComparison.InvariantCultureIgnoreCase));//none
+        personList = Db.Queryable<Person>().Where(p => p.Title.Contains("Mr. 736"));//hit
+        personList = Db.Queryable<Person>().Where("Title like 'Mr. 736'");//none
         Console.WriteLine(personList.ToJson());
 
         var sql = "select * from person";
@@ -99,6 +103,51 @@ class TestSqlSugar
            //db.GetConnection(i).Aop
 
        });
+        var sql = @"
+insert into u (name,age) values('c33',31);
+insert into u (name,age) values('c33',32);
+insert into u (name,age) values('c33',33);
+insert into u (id,name,age) values(1,'c33',23);
+";
+        Db.Ado.BeginTran();
+        try
+        {
+            Db.Ado.ExecuteCommand(sql);
+            Db.Ado.CommitTran();
+        }
+        catch (Exception)
+        {
+            Db.Ado.RollbackTran();
+            //Db.Ado.CommitTran();
+            //throw;
+        }
+
+
+        var uTable = Db.Ado.GetDataTable("select * from u where Name like '%33'");
+        if (uTable != null || uTable.Rows.Count > 0)
+        {
+            uTable.TableName = "u";
+            var row = uTable.Rows[0];
+            row[2] = 21;
+            var newrow = uTable.NewRow();
+            newrow[1] = "c33";
+            newrow[2] = 22;
+            uTable.Rows.Add(newrow);
+            //Db.StorageableByObject(row);
+            //Db.Storageable(new List<string> { }).TranLock();
+            //你也可以拿到更新哪几条和插入哪几条
+            //var insertList = x.InsertList.Select(z => z.Item).ToList();
+            //var updateList = x.UpdateList.Select(z => z.Item).ToList();
+            //Db.StorageableByObject(new object()).ExecuteCommand();
+            var x = Db.Storageable(uTable).WhereColumns("ID").ToStorage();//.SplitInsert(it=>it.Any()).SplitUpdate(it=>it.Any());
+            var updateList = x.DataTableGroups[0].DataTable;
+            var insertList = x.DataTableGroups[1].DataTable;
+            x.AsInsertable.IgnoreColumns(new[] { "ID" }).ExecuteCommand();//不存在插入
+            x.AsUpdateable.ExecuteCommand();//存在更新
+            
+            var x2=Db.Storageable(uTable).WhereColumns("ID").SplitInsert(item=>!item.Any());
+            //var s=result.ToSqlValue();
+        }
         Db.DbMaintenance.GetDataBaseList().ForEach(data => Console.WriteLine(data));
 
         foreach (var col in Db.DbMaintenance.GetColumnInfosByTableName("configurationTableField"))
