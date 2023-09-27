@@ -68,6 +68,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSourceGeneratorLibrary"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSerialPortConsoleApp", "TestSerialPortConsoleApp\TestSerialPortConsoleApp.csproj", "{1915CAFD-978C-49AF-8DE6-E00962C8EBAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestChannelConsoleApp", "TestChannelConsoleApp\TestChannelConsoleApp.csproj", "{778346B5-B490-4ECA-A35D-44BFE7AC3A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBenchmarkDotNetConsoleApp", "TestBenchmarkDotNetConsoleApp\TestBenchmarkDotNetConsoleApp.csproj", "{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -312,6 +316,22 @@ Global
 		{1915CAFD-978C-49AF-8DE6-E00962C8EBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1915CAFD-978C-49AF-8DE6-E00962C8EBAA}.Release|x64.ActiveCfg = Release|Any CPU
 		{1915CAFD-978C-49AF-8DE6-E00962C8EBAA}.Release|x64.Build.0 = Release|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Debug|x64.Build.0 = Debug|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Release|x64.ActiveCfg = Release|Any CPU
+		{778346B5-B490-4ECA-A35D-44BFE7AC3A22}.Release|x64.Build.0 = Release|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Debug|x64.Build.0 = Debug|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Release|x64.ActiveCfg = Release|Any CPU
+		{9A426CFA-A9B9-4AC2-9F95-DF0721F02AEA}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

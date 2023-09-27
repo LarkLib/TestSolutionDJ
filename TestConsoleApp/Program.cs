@@ -7,7 +7,9 @@ namespace TestConsoleApp
     {
         static void Main(string[] args)
         {
-            //TestJson();
+            Console.ReadLine();
+            TestJson();
+            Console.ReadLine();
         }
 
         private static void TestJson()
@@ -24,6 +26,7 @@ namespace TestConsoleApp
 }
             ";
             var root = JsonConvert.DeserializeObject<Rootobject>(json);
+            Console.WriteLine(root);
             Console.WriteLine("Hello, World!");
         }
     }
@@ -45,4 +48,4 @@ namespace TestConsoleApp
         public string name { get; set; }
         public string statous { get; set; }
     }
- }
+}
