@@ -1,16 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Runtime.InteropServices;
+﻿using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
-namespace TestConsoleApp
+namespace TestNewtonsoftCaseSensitiveConsoleApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.ReadLine();
             TestJson();
-            Console.ReadLine();
+            Console.WriteLine("Hello, World!");
         }
 
         private static void TestJson()
@@ -26,7 +24,7 @@ namespace TestConsoleApp
 	'task':{ 'id':100,'name':'task_001','statous':'disable'}
 }
             ";
-            var root = JsonConvert.DeserializeObject<Rootobject>(json);
+            var root = JsonConvert.DeserializeObject<Rootobject>(json, new CaseSensitiveDeserializer());
             Console.WriteLine(root);
             Console.WriteLine("Hello, World!");
         }
@@ -40,7 +38,7 @@ namespace TestConsoleApp
         public int notbeforepolicy { get; set; }
         public string session_state { get; set; }
         public string scope { get; set; }
-        public Task task { get; set; }
+        public string task { get; set; }
     }
 
     public class Task

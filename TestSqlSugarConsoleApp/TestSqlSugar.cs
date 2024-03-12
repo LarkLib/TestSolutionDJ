@@ -102,7 +102,10 @@ class TestSqlSugar
            //注意多租户 有几个设置几个
            //db.GetConnection(i).Aop
 
-       });
+       }); 
+        
+        var id = SnowFlakeSingle.Instance.NextId();//也可以在程序中直接获取ID
+
         var sql = @"
 insert into u (name,age) values('c33',31);
 insert into u (name,age) values('c33',32);
@@ -130,7 +133,7 @@ insert into u (id,name,age) values(1,'c33',23);
             var row = uTable.Rows[0];
             row[2] = 21;
             var newrow = uTable.NewRow();
-            newrow[1] = "c33";
+            newrow[1] = "c55";
             newrow[2] = 22;
             uTable.Rows.Add(newrow);
             //Db.StorageableByObject(row);
