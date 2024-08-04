@@ -73,6 +73,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestModbusWinFormsApp", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSerilogWebApplication", "TestSerilogWebApplication\TestSerilogWebApplication.csproj", "{615C2DD8-ABBD-4F3E-B3BE-FF2A57A7E726}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDownloadWebPageConsoleApp", "TestDownloadWebPageConsoleApp\TestDownloadWebPageConsoleApp.csproj", "{D5DC2D32-7392-496D-A327-E719CC0A7328}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -357,6 +359,14 @@ Global
 		{615C2DD8-ABBD-4F3E-B3BE-FF2A57A7E726}.Release|Any CPU.Build.0 = Release|Any CPU
 		{615C2DD8-ABBD-4F3E-B3BE-FF2A57A7E726}.Release|x64.ActiveCfg = Release|Any CPU
 		{615C2DD8-ABBD-4F3E-B3BE-FF2A57A7E726}.Release|x64.Build.0 = Release|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
