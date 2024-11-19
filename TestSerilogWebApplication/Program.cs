@@ -1,10 +1,8 @@
-
-using Microsoft.Extensions.Options;
 using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting.Compact;
-using System.Runtime.Serialization;
+using System.Diagnostics;
 using Wms.Web.Api.Service;
 using Wms.Web.Api.Service.Filters;
 
@@ -18,10 +16,13 @@ namespace TestSerilogWebApplication
             try
             {
                 Log.Logger = new LoggerConfiguration()//serilog step1
-                    //.ReadFrom.Configuration(builder.Configuration)
+                                                      //.ReadFrom.Configuration(builder.Configuration)
                     .Enrich.FromLogContext()//The FromLogContext method in Serilog is used to enrich log events with properties from the ambient execution context. This can be useful for adding contextual information such as the HTTP request path, user identity, and any other contextual information you have added to the log context. It¡¯s very useful for tracing and understanding the flow of operations, especially when diagnosing issues.
                     .Enrich.With<LogFilePathEnricher>()//LogContext.PushProperty(LogFilePathEnricher.LogFilePathPropertyName, "Logs\\wms.txt");
-                    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                                                       //.Enrich.With<LocalTimeEnricher>()
+                    //.Enrich.WithClientIp()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning) // Override Microsoft logs
+                    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning) // Override ASP.NET Core logs
                     .MinimumLevel.Debug()
                     //.WriteTo.Console(new RenderedCompactJsonFormatter())
                     .WriteTo.Console()
@@ -33,19 +34,27 @@ namespace TestSerilogWebApplication
                         (logFilePath, wt) =>
                         wt.File(
                             //https://github.com/serilog/serilog-sinks-file
-                            //formatter: new CompactJsonFormatter(),//To write events to the file in an alternative format such as JSON, pass an ITextFormatter as the first argument
+                            formatter: new CustomCompactJsonFormatter(),//To write events to the file in an alternative format such as JSON, pass an ITextFormatter as the first argument
                             path: $"{logFilePath}",//log file path, In XML and JSON configuration formats, environment variables can be used in setting values. This means, for instance, that the log file path can be based on TMP or APPDATA
-                            shared: true,//To enable multi-process shared log files, set shared to true
-                            buffered: true,//By default, the file sink will flush each event written through it to disk. To improve write performance, specifying buffered: true will permit the underlying stream to buffer writes.
+                            shared: false,//Buffered writes are not available when file sharing is enabledTo enable multi-process shared log files, set shared to true
+                            buffered: true,//Buffered writes are not available when file sharing is enabled By default, the file sink will flush each event written through it to disk. To improve write performance, specifying buffered: true will permit the underlying stream to buffer writes.
                             rollingInterval: RollingInterval.Day,//o create a log file per day or other time period
                             fileSizeLimitBytes: 1024 * 1024,//To avoid bringing down apps with runaway disk usage the file sink limits file size to 1GB by default. Once the limit is reached, no further events will be written until the next roll poin.The limit can be changed or removed using the fileSizeLimitBytes parameter. fileSizeLimitBytes: null
                             rollOnFileSizeLimit: true,//To roll when the file reaches fileSizeLimitBytes, specify rollOnFileSizeLimit
                             retainedFileCountLimit: 5,//For the same reason, only the most recent 31 files are retained by default (i.e. one long month). To change or remove this limit, pass the retainedFileCountLimit parameter.retainedFileCountLimit: null
-                            flushToDiskInterval: TimeSpan.FromSeconds(1),// If you don¡¯t specify a value for flushToDiskInterval, Serilog will rely on the operating system¡¯s page cache to write the logs to disk2. This means that the logs are written to disk when the operating system decides it¡¯s appropriate, which can sometimes result in a delay2.
-                            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}"),
+                            flushToDiskInterval: TimeSpan.FromSeconds(1)//,// If you don¡¯t specify a value for flushToDiskInterval, Serilog will rely on the operating system¡¯s page cache to write the logs to disk2. This means that the logs are written to disk when the operating system decides it¡¯s appropriate, which can sometimes result in a delay2.
+                            //outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+                            ),
                         sinkMapCountLimit: 1))
                     .CreateLogger();
                 /*
+                The properties you¡¯re seeing in the JSON log entry are part of the Serilog event format. Here¡¯s what each of them means:
+                @t: This represents the timestamp of the log event. It indicates when the event was logged.
+                @mt: This stands for the message template. It¡¯s the template used to format the log message.
+                @tr: This is the transaction ID or trace ID. It helps in tracking the flow of a request through different components of the system.
+                @sp: This represents the span ID. It¡¯s used in distributed tracing to identify a specific span within a trace.
+                These properties are useful for understanding the context and details of each log event. If you have any more questions or need further clarification, feel free to ask!
+
                 Extensibility
                 FileLifecycleHooks provide an extensibility point that allows hooking into different parts of the life cycle of a log file.
                 You can create a hook by extending from FileLifecycleHooks and overriding the OnFileOpened and/or OnFileDeleting methods.
@@ -62,6 +71,7 @@ namespace TestSerilogWebApplication
                 //builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console());
 
                 // Add services to the container.
+                builder.Services.AddHealthChecks();
 
                 builder.Services.AddControllers(options =>
                 {
@@ -81,14 +91,14 @@ namespace TestSerilogWebApplication
                     app.UseSwaggerUI();
                 }
 
-                app.UseHttpsRedirection();
+                //app.UseHttpsRedirection();
 
                 app.UseAuthorization();
 
 
                 app.MapControllers();
 
-                app.UseSerilogRequestLogging();//serilog step3
+                //app.UseSerilogRequestLogging();//serilog step3
                 //app.UseSerilogRequestLogging(options =>
                 //{
                 //    //options.MessageTemplate = "Handled {RequestPath}";
@@ -96,6 +106,7 @@ namespace TestSerilogWebApplication
                 //});
 
                 app.UseMiddleware<ExceptionMiddleware>();
+                app.MapHealthChecks("/health");
 
                 app.Run();
             }
@@ -139,4 +150,52 @@ namespace TestSerilogWebApplication
             logEvent.AddPropertyIfAbsent(logFilePathProperty);
         }
     }
+
+    //public class CustomCompactJsonFormatter : Serilog.Formatting.ITextFormatter//CompactJsonFormatter
+    //{
+    //    public void Format(LogEvent logEvent, TextWriter output)
+    //    {
+    //        output.Write("{\"@t\":\"");
+    //        output.Write(logEvent.Timestamp.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"));
+    //        output.Write("\",\"@mt\":\"");
+    //        output.Write(logEvent.MessageTemplate.Text);
+    //        output.Write("\"");
+
+    //        foreach (var property in logEvent.Properties)
+    //        {
+    //            output.Write(",\"");
+    //            output.Write(property.Key);
+    //            output.Write("\":\"");
+    //            output.Write(property.Value);
+    //            output.Write("\"");
+    //        }
+
+    //        output.Write("}");
+    //    }
+
+    //    //protected override void WriteProperties(
+    //    //    IReadOnlyDictionary<string, LogEventPropertyValue> properties,
+    //    //    TextWriter output)
+    //    //{
+    //    //    // Customize the properties output here
+    //    //    base.WriteProperties(properties, output);
+    //    //}
+
+    //    //protected override void WriteTimestamp(DateTimeOffset timestamp, TextWriter output)
+    //    //{
+    //    //    // Customize the timestamp format here
+    //    //    output.Write("{\"@t\":\"");
+    //    //    output.Write(timestamp.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"));
+    //    //    output.Write("\"");
+    //    //}
+    //}
+
+    //internal class LocalTimeEnricher : ILogEventEnricher
+    //{
+    //    public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
+    //    {
+    //        var localTimestamp = logEvent.Timestamp.ToLocalTime();
+    //        logEvent.AddOrUpdateProperty(new LogEventProperty("@t", new ScalarValue(localTimestamp)));
+    //    }
+    //}
 }

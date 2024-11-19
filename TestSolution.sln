@@ -75,6 +75,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSerilogWebApplication",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDownloadWebPageConsoleApp", "TestDownloadWebPageConsoleApp\TestDownloadWebPageConsoleApp.csproj", "{D5DC2D32-7392-496D-A327-E719CC0A7328}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgrokRequestExample", "NgrokRequestExample\NgrokRequestExample.csproj", "{71F556B7-3216-46AC-B76D-C34C6DFC658D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -367,6 +369,14 @@ Global
 		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|x64.ActiveCfg = Release|Any CPU
 		{D5DC2D32-7392-496D-A327-E719CC0A7328}.Release|x64.Build.0 = Release|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Debug|x64.Build.0 = Debug|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|x64.ActiveCfg = Release|Any CPU
+		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
