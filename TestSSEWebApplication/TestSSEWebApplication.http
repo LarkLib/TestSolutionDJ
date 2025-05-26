@@ -1,0 +1,6 @@
+@TestSSEWebApplication_HostAddress = http://localhost:5069
+
+GET {{TestSSEWebApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

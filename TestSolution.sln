@@ -77,6 +77,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDownloadWebPageConsoleA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgrokRequestExample", "NgrokRequestExample\NgrokRequestExample.csproj", "{71F556B7-3216-46AC-B76D-C34C6DFC658D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNeo4jDriverConsoleApp", "TestNeo4jDriverConsoleApp\TestNeo4jDriverConsoleApp.csproj", "{38B49A41-2A6D-42E5-8655-C2907E611F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSSEWebApplication", "TestSSEWebApplication\TestSSEWebApplication.csproj", "{38897EB9-2A31-455B-A59C-C590CD23757E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -377,6 +381,22 @@ Global
 		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|x64.ActiveCfg = Release|Any CPU
 		{71F556B7-3216-46AC-B76D-C34C6DFC658D}.Release|x64.Build.0 = Release|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Debug|x64.Build.0 = Debug|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Release|x64.ActiveCfg = Release|Any CPU
+		{38B49A41-2A6D-42E5-8655-C2907E611F81}.Release|x64.Build.0 = Release|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Debug|x64.Build.0 = Debug|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|x64.ActiveCfg = Release|Any CPU
+		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

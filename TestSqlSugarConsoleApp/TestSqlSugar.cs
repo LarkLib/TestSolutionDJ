@@ -43,6 +43,12 @@ class TestSqlSugar
             //注意多租户 有几个设置几个
             //db.GetConnection(i).Aop            
         });
+        //var allPersonList = Db.Queryable<Person>().ToList();
+        //var first = allPersonList.First();
+        //first.FirstName = "fff";
+        //allPersonList.Remove(Person.CreatePerson());
+        //allPersonList.Add(allPersonList[2]);
+        //var x = Db.Storageable(allPersonList);
 
         Db.CodeFirst.InitTables(typeof(Person));//这样一个表就能成功创建了
 
@@ -87,7 +93,7 @@ class TestSqlSugar
 
            db.Aop.OnLogExecuting = (sql, pars) =>
            {
-               //Console.WriteLine(sql);//输出sql,查看执行sql 性能无影响
+               Console.WriteLine(sql);//输出sql,查看执行sql 性能无影响
 
 
                //获取原生SQL推荐 5.1.4.63  性能OK
@@ -102,8 +108,17 @@ class TestSqlSugar
            //注意多租户 有几个设置几个
            //db.GetConnection(i).Aop
 
-       }); 
-        
+       });
+        Db.CodeFirst.InitTables(typeof(Student));
+        var dtStudent = Db.Queryable<Student>().ToDataTable();
+        //dtStudent.Columns.RemoveAt(0);
+        dtStudent.Rows[0]["Id"] = 0;
+        dtStudent.Rows[0]["StudentName"] = StringExtensions.GenerateRandomString(5); //"dd";
+        //var updateView = new System.Data.DataView(dtStudent);
+        //var result = Db.Fastest<System.Data.DataView>().AS("dbstudent").BulkUpdate(updateView.ToTable(), new[] { "SchoolId" });
+        //var result = Db.Fastest<System.Data.DataView>().AS("dbstudent").BulkMerge(dtStudent, new[] { "SchoolId" }, new[] { "StudentName" }, false);
+        var studentList = Db.Utilities.DataTableToList<Student>(dtStudent);
+
         var id = SnowFlakeSingle.Instance.NextId();//也可以在程序中直接获取ID
 
         var sql = @"
@@ -147,8 +162,8 @@ insert into u (id,name,age) values(1,'c33',23);
             var insertList = x.DataTableGroups[1].DataTable;
             x.AsInsertable.IgnoreColumns(new[] { "ID" }).ExecuteCommand();//不存在插入
             x.AsUpdateable.ExecuteCommand();//存在更新
-            
-            var x2=Db.Storageable(uTable).WhereColumns("ID").SplitInsert(item=>!item.Any());
+
+            var x2 = Db.Storageable(uTable).WhereColumns("ID").SplitInsert(item => !item.Any());
             //var s=result.ToSqlValue();
         }
         Db.DbMaintenance.GetDataBaseList().ForEach(data => Console.WriteLine(data));
@@ -268,3 +283,30 @@ insert into u (id,name,age) values(1,'c33',23);
         Console.WriteLine(persons.ToJson());
     }
 }
+
+public static class StringExtensions
+{
+    /// <summary>
+    /// Generates a random string of the specified length.
+    /// </summary>
+    /// <param name="length">The length of the random string to generate.</param>
+    /// <param name="allowedChars">Optional: A string containing the characters allowed in the random string.  Defaults to alphanumeric characters.</param>
+    /// <returns>A random string of the specified length.</returns>
+    public static string GenerateRandomString(int length, string allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    {
+        if (length < 0)
+        {
+            throw new ArgumentException("Length must be non-negative.", nameof(length));
+        }
+
+        if (string.IsNullOrEmpty(allowedChars))
+        {
+            throw new ArgumentException("Allowed characters cannot be null or empty.", nameof(allowedChars));
+        }
+
+        Random random = new Random(); // Consider using a thread-safe Random for high-concurrency scenarios
+        return new string(Enumerable.Repeat(allowedChars, length)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
+}
+

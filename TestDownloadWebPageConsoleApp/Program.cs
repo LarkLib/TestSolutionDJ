@@ -15,7 +15,7 @@ namespace TestDownloadWebPageConsoleApp
         {
             var p = new Program();
             //await p.DownloadGulong();//古龙全集
-            await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book.aspx?id=303");//牡丹亭 原文
+            //await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book.aspx?id=303");//牡丹亭 原文
             //await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book_406ec46ca000.aspx");//酉阳杂俎 原文
             //await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book_46653FD803893E4F2E04DEE24C8F49C4.aspx");//博物志
             //await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book_1bd76a1c3d01.aspx");//论语
@@ -23,6 +23,7 @@ namespace TestDownloadWebPageConsoleApp
             //await p.DownloadZhongHuanDianCang("https://www.zhonghuadiancang.com/wenxueyishu/zibuyu/");//子不语
             //await p.DownloadGuShiWenWang("https://www.gushiwen.cn/guwen/book_46653FD803893E4F44793CB19FDDA58B.aspx");//新齐谐(子不语)原文
             //await p.DownloadZhongHuanDianCang("https://www.zhonghuadiancang.com/leishuwenji/taipingyulan/");//太平御览
+            await p.DownloadZhongHuanDianCang("https://www.zhonghuadiancang.com/wenxueyishu/youminglu/");//幽冥录 刘义庆
         }
 
         private async Task DownloadGulong()
