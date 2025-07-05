@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNeo4jDriverConsoleApp",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSSEWebApplication", "TestSSEWebApplication\TestSSEWebApplication.csproj", "{38897EB9-2A31-455B-A59C-C590CD23757E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPatternMatchingConsoleApp", "TestPatternMatchingConsoleApp\TestPatternMatchingConsoleApp.csproj", "{C1AA04CD-C9D4-4409-90DF-72B7E300045E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -397,6 +399,14 @@ Global
 		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|x64.ActiveCfg = Release|Any CPU
 		{38897EB9-2A31-455B-A59C-C590CD23757E}.Release|x64.Build.0 = Release|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Debug|x64.Build.0 = Debug|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Release|x64.ActiveCfg = Release|Any CPU
+		{C1AA04CD-C9D4-4409-90DF-72B7E300045E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
